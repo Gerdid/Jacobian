@@ -65,7 +65,7 @@ def matrixMultiplication(T,dof):
 
 if __name__ == '__main__':
     T=substitute(70,20,-30,60,-15,75,10,7);
-    
+
     T0_7=matrixMultiplication(T,7)
     A0_1=T[0]
     A0_2=matrixMultiplication(T,2)  #0A1*1A2
@@ -76,22 +76,22 @@ if __name__ == '__main__':
     A0_7=T0_7                       #0A1*1A2*2A3*3A4*4A5*5A6*6A7
 
     z0_0=[0],[0],[1]
-    z0_1=A0_1[0:3,2] 
+    z0_1=A0_1[0:3,2]
     z0_2=A0_2[0:3,2]
-    z0_3=A0_3[0:3,2]   
-    z0_4=A0_4[0:3,2] 
-    z0_5=A0_5[0:3,2]   
+    z0_3=A0_3[0:3,2]
+    z0_4=A0_4[0:3,2]
+    z0_5=A0_5[0:3,2]
     z0_6=A0_6[0:3,2]
     z0_7=A0_7[0:3,2]
-    
+
     p0_7=A0_7[0:3,3:4]-z0_0
-    p1_7=A0_7[0:3,3:4]-A0_1[0:3,3:4]  
+    p1_7=A0_7[0:3,3:4]-A0_1[0:3,3:4]
     p2_7=A0_7[0:3,3:4]-A0_2[0:3,3:4]
-    p3_7=A0_7[0:3,3:4]-A0_3[0:3,3:4]   
-    p4_7=A0_7[0:3,3:4]-A0_4[0:3,3:4]   
-    p5_7=A0_7[0:3,3:4]-A0_5[0:3,3:4]   
+    p3_7=A0_7[0:3,3:4]-A0_3[0:3,3:4]
+    p4_7=A0_7[0:3,3:4]-A0_4[0:3,3:4]
+    p5_7=A0_7[0:3,3:4]-A0_5[0:3,3:4]
     p6_7=A0_7[0:3,3:4]-A0_6[0:3,3:4]
-       
+
     J1=np.append(np.cross(z0_0,p0_7,axis=0),z0_0)
     J2=np.append(np.cross(z0_1,p1_7,axis=0),z0_1)
     J3=np.append(np.cross(z0_2,p2_7,axis=0),z0_2)
@@ -99,13 +99,10 @@ if __name__ == '__main__':
     J5=np.append(np.cross(z0_4,p4_7,axis=0),z0_4)
     J6=np.append(np.cross(z0_5,p5_7,axis=0),z0_5)
     J7=np.append(np.cross(z0_6,p6_7,axis=0),z0_6)
-    
+
     J=J1,J2,J3,J4,J5,J6,J7
     J=np.transpose(J)
-    
-    
+
+
     print("---Spatial Velocity---")
     print(np.dot(J,q))
-
-    
-    
