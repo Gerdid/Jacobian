@@ -24,4 +24,4 @@ jdq=robot.jacob_dot(q,qd);
 %end-effector frame
 je=robot.jacobe(q);
 
-s=j0*qd  %Computes spatial velocity at given instantaneous angular velocities qn
+s=j0*qd  %Computes spatial velocity at given instantaneous angular velocities qd
