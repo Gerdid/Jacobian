@@ -7,8 +7,6 @@ Created on Fri Nov  3 12:46:51 2017
 import sympy as sym                     #
 import numpy as np                      #
 import math as math                     #Libraries import
-from mpl_toolkits.mplot3d import Axes3D #
-import matplotlib.pyplot as plt         #
 
 #---Constants definition---#
 pi=math.pi
